@@ -1,3 +1,4 @@
+import lombok.EqualsAndHashCode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -126,4 +127,57 @@ class FilmManagerTest {
         assertArrayEquals(expected, actual);
 
     }
+
+
+    @Test
+    void shouldGetFilmId() {
+        FilmsPoster first = new FilmsPoster(11, "BloodShot");
+
+        first.getFilmId();
+
+        int expected = 11;
+        int actual = first.getFilmId();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void getFilmName() {
+        FilmsPoster first = new FilmsPoster(11, "BloodShot");
+
+        first.getFilmName();
+
+        String expected = "BloodShot";
+        String actual = first.getFilmName();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setFilmId() {
+        FilmsPoster first = new FilmsPoster(11, "BloodShot");
+
+        first.setFilmId(13);
+
+        int expected = 13;
+        int actual = first.getFilmId();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void setFilmName() {
+        FilmsPoster first = new FilmsPoster(11, "BloodShot");
+
+        first.setFilmName("Up");
+
+        String expected = "Up";
+        String actual = first.getFilmName();
+
+        assertEquals(expected, actual);
+    }
+
+
+
 }
+
