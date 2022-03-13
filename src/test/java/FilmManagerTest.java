@@ -103,6 +103,7 @@ class FilmManagerTest {
         FilmsPoster ninth = new FilmsPoster(99, "Batman");
         FilmsPoster tenth = new FilmsPoster(101, "Superman");
         FilmsPoster eleventh = new FilmsPoster(111, "Cat-women");
+        FilmsPoster twelfth = new FilmsPoster(112, "Joker");
 
         FilmManager fm = new FilmManager();
         fm.add(first);
@@ -116,10 +117,11 @@ class FilmManagerTest {
         fm.add(ninth);
         fm.add(tenth);
         fm.add(eleventh);
+        fm.add(twelfth);
 
         fm.showLastTen();
 
-        FilmsPoster[] expected = {eleventh,tenth,ninth,eighth,seventh,sixth,fifth,fourth,third,second};
+        FilmsPoster[] expected = {twelfth,eleventh,tenth,ninth,eighth,seventh,sixth,fifth,fourth,third};
         FilmsPoster[] actual = fm.showLastTen();
         assertArrayEquals(expected, actual);
 
