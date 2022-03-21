@@ -99,6 +99,6 @@ class FilmManagerTest {
 
         FilmsPoster expected = third;
         FilmsPoster actual = third;
-        assertEquals(expected, actual);
+        assertEquals(expected, actual); // help
     }
 }

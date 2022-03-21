@@ -1,6 +1,7 @@
 package repository;
 
 import domain.FilmsPoster;
+import domain.NotFoundException;
 
 public class FilmsRepo {
     private FilmsPoster[] films = new FilmsPoster[0];
@@ -28,6 +29,9 @@ public class FilmsRepo {
     }
 
     public void removeByFilmId(int filmId) {
+        if (findByFilmId(filmId) == null) {
+            throw new NotFoundException(filmId);
+        }
         int length = films.length - 1;
         FilmsPoster[] tmp = new FilmsPoster[length];
         int index = 0;
@@ -44,4 +48,5 @@ public class FilmsRepo {
         FilmsPoster[] tmp = new FilmsPoster[0];
         films = tmp;
     }
+
 }

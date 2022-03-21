@@ -26,6 +26,7 @@
             <version>3.6.28</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <properties>
@@ -73,7 +74,7 @@
                                 <rule>
                                     <limits>
                                         <limit>
-                                            <counter>CLASS</counter>
+                                            <counter>METHOD</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>100%</minimum>
                                         </limit>
@@ -84,7 +85,23 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.5.2.0</version>
+                <configuration>
+                    <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
+                    <excludeFilterFile>spotbugs-security-exclude.xml</excludeFilterFile>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.h3xstream.findsecbugs</groupId>
+                            <artifactId>findsecbugs-plugin</artifactId>
+                            <version>1.10.1</version>
+                        </plugin>
+                    </plugins>
 
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
