@@ -1,8 +1,7 @@
-package Manager;
+package manager;
 
 import domain.FilmsPoster;
 import org.junit.jupiter.api.Test;
-import repository.FilmsRepo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

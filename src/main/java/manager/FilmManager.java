@@ -1,9 +1,11 @@
-package Manager;
+package manager;
 
 import domain.FilmsPoster;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import repository.FilmsRepo;
 
-
+@NoArgsConstructor
 public class FilmManager {
     private FilmsRepo repository = new FilmsRepo();
 
@@ -11,19 +13,22 @@ public class FilmManager {
         this.repository = repository;
     }
 
-
     public void save(FilmsPoster film) {
         repository.add(film);
     }
 
-    public FilmsPoster[] findAll() {
-       /* FilmsPoster[] films = repository.getAll();
+    public FilmsPoster[] findLastTen() {
+        FilmsPoster[] films = repository.getAll();
         FilmsPoster[] result = new FilmsPoster[films.length];
         for (int i = 0; i < result.length; i++) {
             int index = films.length - i - 1;
             result[i] = films[index];
         }
-        return result;*/
+        return result;
+    }
+
+    public FilmsPoster[] findAll() {
+
         return repository.getAll();
     }
 
@@ -38,9 +43,6 @@ public class FilmManager {
     public FilmsPoster findById(int filmId) {
         FilmsPoster result = repository.findByFilmId(filmId);
         return result;
-    }
-
-    public FilmManager() {
     }
 
 
