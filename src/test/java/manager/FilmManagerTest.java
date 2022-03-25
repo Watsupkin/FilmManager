@@ -94,10 +94,8 @@ class FilmManagerTest {
         fm.save(sixth);
         fm.save(seventh);
 
-        fm.findById(33);
-
         FilmsPoster expected = third;
-        FilmsPoster actual = third;
-        assertEquals(expected, actual); // help
+        FilmsPoster actual = fm.findById(33);
+        assertEquals(expected, actual);
     }
 }
